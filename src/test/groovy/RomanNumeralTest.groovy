@@ -1,8 +1,15 @@
 import org.spockframework.util.ReflectionUtil
 import spock.lang.Specification
+import spock.lang.Unroll
 
 
 class RomanNumeralTest extends Specification {
+
+    RomanNumeral romanNumeral
+
+    def setup(){
+        romanNumeral = new RomanNumeral()
+    }
 
     def "RomanNumeral Class is present"() {
         expect:
@@ -14,28 +21,14 @@ class RomanNumeralTest extends Specification {
         ReflectionUtil.isMethodAvailable("RomanNumeral", "toRomanNumeral")
     }
 
-    def "toRomanNumeral() method accepts 1 and returns I"() {
-        setup:
+    @Unroll("Method Accepts #input and returns #result")
+    def "toRomanNumeral() method accepts number and returns roman numerals"() {
+        expect:
+        romanNumeral.toRomanNumeral(input) == result
 
-        RomanNumeral romanNumeral = new RomanNumeral()
-
-        when:
-        String result = romanNumeral.toRomanNumeral(1)
-
-        then:
-        result == "I"
-    }
-
-    def "toRomanNumeral() method accepts 3 and returns III"() {
-        setup:
-
-        RomanNumeral romanNumeral = new RomanNumeral()
-
-        when:
-        String result = romanNumeral.toRomanNumeral(3)
-
-        then:
-        result == "III"
+        where:
+        input << [ 1, 3]
+        result << [ "I", "III"]
     }
 
 }
