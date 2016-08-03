@@ -11,6 +11,7 @@ class RomanNumeral {
         String result = ""
 
         Map<String, Integer> NUMBERALS = [
+                10: "X",
                 9: "IX",
                 4: "IV",
                 1: "I"
