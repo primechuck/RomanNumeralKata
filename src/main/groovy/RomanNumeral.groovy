@@ -1,5 +1,16 @@
 class RomanNumeral {
 
+    static final Map<Integer, String> NUMERALS = [
+            100: "C",
+            90: "XC",
+            50: "L",
+            40: "XL",
+            10: "X",
+            9: "IX",
+            4: "IV",
+            1: "I"
+    ]
+
     /**
      *  Converts a number to a Roman Numeral
      *
@@ -10,16 +21,8 @@ class RomanNumeral {
         if (input < 1) throw new IllegalArgumentException("Input ${input} is out of range.  Must be greater than 0")
         String result = ""
 
-        Map<String, Integer> NUMBERALS = [
-                50: "L",
-                40: "XL",
-                10: "X",
-                9: "IX",
-                4: "IV",
-                1: "I"
-        ]
         while (input > 0) {
-            NUMBERALS.each { number, numeral ->
+            NUMERALS.each { number, numeral ->
                 if (input >= number) {
                     result <<= numeral
                     input = input - number
