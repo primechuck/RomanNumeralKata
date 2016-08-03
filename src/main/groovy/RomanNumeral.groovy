@@ -10,18 +10,17 @@ class RomanNumeral {
         if (input < 1) throw new IllegalArgumentException("Input ${input} is out of range.  Must be greater than 0")
         String result = ""
 
+        Map<String, Integer> NUMBERALS = [
+                9: "IX",
+                4: "IV",
+                1: "I"
+        ]
         while (input > 0) {
-            if (input >= 9) {
-                result <<= "IX"
-                input = input - 9
-            }
-            if (input >= 4) {
-                result <<= "IV"
-                input = input - 4
-            }
-            if (input >= 1) {
-                result <<= "I"
-                input = input - 1
+            NUMBERALS.each { number, numeral ->
+                if (input >= number) {
+                    result <<= numeral
+                    input = input - number
+                }
             }
         }
         return result
