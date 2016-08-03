@@ -8,4 +8,9 @@ class RomanNumeralTest extends Specification {
         expect:
         ReflectionUtil.isClassAvailable("RomanNumeral")
     }
+
+    def "toRomanNumeral() method is available"(){
+        expect:
+        ReflectionUtil.isMethodAvailable("RomanNumeral","toRomanNumeral")
+    }
 }
