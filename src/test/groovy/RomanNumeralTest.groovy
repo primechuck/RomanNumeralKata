@@ -30,7 +30,7 @@ class RomanNumeralTest extends Specification {
         thrown(IllegalArgumentException)
     }
 
-    @Unroll("Method Accepts #input and returns #result")
+    @Unroll("Method toRomanNumeral() Accepts #input and returns #result")
     def "toRomanNumeral() method accepts number and returns roman numerals"() {
         expect:
         romanNumeral.toRomanNumeral(input) == result
