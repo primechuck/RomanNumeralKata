@@ -26,5 +26,16 @@ class RomanNumeralTest extends Specification {
         result == "I"
     }
 
+    def "toRomanNumeral() method accepts 3 and returns III"() {
+        setup:
+
+        RomanNumeral romanNumeral = new RomanNumeral()
+
+        when:
+        String result = romanNumeral.toRomanNumeral(3)
+
+        then:
+        result == "III"
+    }
 
 }

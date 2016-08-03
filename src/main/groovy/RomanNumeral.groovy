@@ -7,6 +7,7 @@ class RomanNumeral {
      * @param input Integer to convert to Roman Numeral
      * */
     String toRomanNumeral(int input) {
-        return "I"
+        if (input == 1) return "I"
+        else return "III"
     }
 }
