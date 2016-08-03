@@ -9,8 +9,11 @@ class RomanNumeral {
     String toRomanNumeral(int input) {
         String result = ""
 
-        input.times {
-            result <<= "I"
+        while (input > 0) {
+            if (input <= 3) {
+                result <<= "I"
+                input = input - 1
+            }
         }
         return result
     }
