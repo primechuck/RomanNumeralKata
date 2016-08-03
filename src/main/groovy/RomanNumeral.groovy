@@ -11,7 +11,11 @@ class RomanNumeral {
         String result = ""
 
         while (input > 0) {
-            if (input == 4) {
+            if (input >= 9) {
+                result <<= "IX"
+                input = input - 9
+            }
+            if (input >= 4) {
                 result <<= "IV"
                 input = input - 4
             }
