@@ -21,6 +21,15 @@ class RomanNumeralTest extends Specification {
         ReflectionUtil.isMethodAvailable("RomanNumeral", "toRomanNumeral")
     }
 
+    def "toRomanNumeral() throws exception when 0 is entered"(){
+        when:
+        Integer input = 0
+        romanNumeral.toRomanNumeral(input)
+
+        then:
+        thrown(IllegalArgumentException)
+    }
+
     @Unroll("Method Accepts #input and returns #result")
     def "toRomanNumeral() method accepts number and returns roman numerals"() {
         expect:
