@@ -1,6 +1,8 @@
 class RomanNumeral {
 
     static final Map<Integer, String> NUMERALS = [
+            1000: "M",
+            900: "CM",
             500: "D",
             400: "CD",
             100: "C",
@@ -9,6 +11,7 @@ class RomanNumeral {
             40: "XL",
             10: "X",
             9: "IX",
+            6: "VI",
             4: "IV",
             1: "I"
     ]
@@ -24,6 +27,10 @@ class RomanNumeral {
         String result = ""
 
         while (input > 0) {
+            /**
+             * Iterate over conversion map from big to to small
+             * Decrementing for the Numeral value until zero
+             */
             NUMERALS.each { number, numeral ->
                 if (input >= number) {
                     result <<= numeral
