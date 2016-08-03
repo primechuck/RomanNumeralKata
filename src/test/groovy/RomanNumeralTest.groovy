@@ -7,7 +7,7 @@ class RomanNumeralTest extends Specification {
 
     RomanNumeral romanNumeral
 
-    def setup(){
+    def setup() {
         romanNumeral = new RomanNumeral()
     }
 
@@ -21,7 +21,7 @@ class RomanNumeralTest extends Specification {
         ReflectionUtil.isMethodAvailable("RomanNumeral", "toRomanNumeral")
     }
 
-    def "toRomanNumeral() throws exception when 0 is entered"(){
+    def "toRomanNumeral() throws exception when 0 is entered"() {
         when:
         Integer input = 0
         romanNumeral.toRomanNumeral(input)
@@ -36,7 +36,7 @@ class RomanNumeralTest extends Specification {
         romanNumeral.toRomanNumeral(input) == result
 
         where:
-        input << [ 1, 3, 4, 9, 10]
-        result << [ "I", "III", "IV", "IX", "X"]
+        input << [1, 3, 4, 9, 10, 14]
+        result << ["I", "III", "IV", "IX", "X", "XIV"]
     }
 }
