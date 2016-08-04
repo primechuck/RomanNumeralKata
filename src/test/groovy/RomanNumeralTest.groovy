@@ -36,7 +36,7 @@ class RomanNumeralTest extends Specification {
         romanNumeral.toRomanNumeral(input) == result
 
         where:
-        input << [1, 3, 4, 6, 7, 9, 10, 14, 40, 44, 50, 90, 94, 100, 400, 500, 1066]
-        result << ["I", "III", "IV", "VI", "VII", "IX", "X", "XIV", "XL", "XLIV", "L", "XC", "XCIV", "C", "CD", "D", "MLXVI"]
+        input << [1, 3, 4, 6, 7, 9, 10, 14, 40, 44, 50, 90, 94, 100, 400, 500, 1066, 1993, 1989 ]
+        result << ["I", "III", "IV", "VI", "VII", "IX", "X", "XIV", "XL", "XLIV", "L", "XC", "XCIV", "C", "CD", "D", "MLXVI", "MCMXCIII", "MCMLXXXIX"]
     }
 }
